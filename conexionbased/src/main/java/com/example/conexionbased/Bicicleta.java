@@ -1,7 +1,16 @@
 package com.example.conexionbased;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import jakarta.persistence.Id;
+
+@Entity
 public class Bicicleta {
     
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String marca;
     private String modelo;
