@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th = "http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>helloWeb</title>
+        <title>Mi pagina</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1 th:text="${greet}">Default title</h1>
-        <p>If you se a greeting,
-            Spring MVC and thymeleaf are workin
-        </p>
+        <h1>Bienvenido a mi página, <span th:text="${nombre}"></span>!</h1>
     </body>
 </html>
