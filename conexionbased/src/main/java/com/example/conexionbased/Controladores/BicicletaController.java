@@ -1,4 +1,4 @@
-package com.example.conexionbased;
+package com.example.conexionbased.Controladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 //¿Como hago para agregar una nueva bicicleta a la base de datos de mysql?
+
+import com.example.conexionbased.Modelo.Bicicleta;
+import com.example.conexionbased.Services.BicicletaService;
 
 import java.util.List;
 
@@ -44,7 +47,6 @@ public ResponseEntity<Bicicleta> createBicicleta(@ModelAttribute Bicicleta bicic
     return new ResponseEntity<>(newBicicleta, HttpStatus.CREATED);
 }  
 
-
     // Actualizar una bicicleta existente (PUT)
     @PutMapping("/{id}")
     public ResponseEntity<Bicicleta> updateBicicleta(@PathVariable Long id, @RequestBody Bicicleta bicicleta) {
@@ -66,12 +68,11 @@ public ResponseEntity<Bicicleta> createBicicleta(@ModelAttribute Bicicleta bicic
         this.bicicletaService = bicicletaService;
     }
 
-
     @GetMapping("/listadoBicicletas")
     public String listarBicicletas(Model model) {
         List<Bicicleta> bicicletas = bicicletaService.findAll();
         model.addAttribute("bicicletas", bicicletas);
         model.addAttribute("bicicleta", new Bicicleta()); // Añade esta línea
-        return "listadoBicicletas";
+        return "listado-bicicletas";
     }
 }

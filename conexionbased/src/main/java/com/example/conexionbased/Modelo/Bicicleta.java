@@ -1,28 +1,36 @@
-package com.example.conexionbased;
+package com.example.conexionbased.Modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table
 public class Bicicleta {
-    
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
-    private String marca;
-    private String modelo;
-    public String cliente;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    
+    @Column(name = "marca")
+    private String marca;
+    
+    @Column(name = "modelo")
+    private String modelo;
+/*
+    @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH })
+    @Column(name = "cliente_id")
+    public Cliente cliente;
+*/
     public Bicicleta() {
     }
 
-    public Bicicleta(Long id, String marca, String modelo) {
-        this.id = id;
+    public Bicicleta(String marca, String modelo) {
         this.marca = marca;
         this.modelo = modelo;
     }
@@ -50,23 +58,23 @@ public class Bicicleta {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-
-    public String getCliente() {
+/*
+    public Cliente getCliente() {
         return this.cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+*/
 
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", marca='" + getMarca() + "'" +
-            ", modelo='" + getModelo() + "'" +
-            "}";
+                " id='" + getId() + "'" +
+                ", marca='" + getMarca() + "'" +
+                ", modelo='" + getModelo() + "'" +
+                "}";
     }
-
 
 }
