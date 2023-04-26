@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+//¿Como hago para agregar una nueva bicicleta a la base de datos de mysql?
 
 import java.util.List;
 
@@ -67,11 +67,11 @@ public ResponseEntity<Bicicleta> createBicicleta(@ModelAttribute Bicicleta bicic
     }
 
 
-    @GetMapping("/listado-bicicletas")
+    @GetMapping("/listadoBicicletas")
     public String listarBicicletas(Model model) {
         List<Bicicleta> bicicletas = bicicletaService.findAll();
         model.addAttribute("bicicletas", bicicletas);
         model.addAttribute("bicicleta", new Bicicleta()); // Añade esta línea
-        return "listado-bicicletas";
+        return "listadoBicicletas";
     }
 }
