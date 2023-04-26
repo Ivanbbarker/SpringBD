@@ -68,7 +68,7 @@ public ResponseEntity<Bicicleta> createBicicleta(@ModelAttribute Bicicleta bicic
         this.bicicletaService = bicicletaService;
     }
 
-    @GetMapping("/listadoBicicletas")
+    @RequestMapping("/listadobicicletas")
     public String listarBicicletas(Model model) {
         List<Bicicleta> bicicletas = bicicletaService.findAll();
         model.addAttribute("bicicletas", bicicletas);
