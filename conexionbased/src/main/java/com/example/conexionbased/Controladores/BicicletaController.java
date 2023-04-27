@@ -7,12 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-//¿Como hago para agregar una nueva bicicleta a la base de datos de mysql?
+
 
 import com.example.conexionbased.Modelo.Bicicleta;
 import com.example.conexionbased.Services.BicicletaService;
 
 import java.util.List;
+//Al entrar en la ruta http://localhost:8080/listado_bicicletas espero que me devuelva la plantilla que se encuentra en /resources/templates cuyo nombre es listado_bicicletas.html
 
 @Controller //se utiliza para construir aplicaciones web y devuelve vistas.
 //@RestController // es una versión especializada de @Controller que se utiliza para construir servicios RESTful y devuelve directamente objetos JSON. incompatible con @Controller
@@ -68,11 +69,12 @@ public ResponseEntity<Bicicleta> createBicicleta(@ModelAttribute Bicicleta bicic
         this.bicicletaService = bicicletaService;
     }
 
-    @RequestMapping("/listadobicicletas")
+    
+    @RequestMapping("/listado_bicicletas")
     public String listarBicicletas(Model model) {
         List<Bicicleta> bicicletas = bicicletaService.findAll();
         model.addAttribute("bicicletas", bicicletas);
         model.addAttribute("bicicleta", new Bicicleta()); // Añade esta línea
-        return "listado-bicicletas";
+        return "listado_bicicletas";
     }
 }

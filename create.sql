@@ -8,3 +8,73 @@
         modelo varchar(255),
         primary key (id)
     ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
+
+    create table bicicleta (
+       id bigint not null auto_increment,
+        marca varchar(255),
+        modelo varchar(255),
+        primary key (id)
+    ) engine=InnoDB;
